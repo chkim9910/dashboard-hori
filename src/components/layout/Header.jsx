@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link as ReactRouterLink } from "react-router-dom";
 import {
   Box,
   ButtonGroup,
@@ -8,150 +9,304 @@ import {
   Container,
   UnorderedList,
   ListItem,
+  Flex,
+  Link,
+  Text,
+  Image,
 } from "@chakra-ui/react";
-import { HamburgerIcon, SearchIcon, SunIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import {
+  IoIosCart,
+  IoMdHome,
+  IoMdLock,
+  IoMdPerson,
+  IoMdStats,
+} from "react-icons/io";
+// import { HamburgerIcon, SearchIcon, SunIcon } from "@chakra-ui/icons";
 import Gnb from "./Gnb";
 import gsap from "gsap";
+import circle from "../../assets/images/circle.png";
 
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const navBeltHeight =
-        document.querySelector(".nav-belt__wrapper")?.offsetHeight || 0;
-      const scrollPosition =
-        window.pageYOffset || document.documentElement.scrollTop;
+  const gnbList = [
+    { name: "Main Dashboard", icon: <IoMdHome />, path: "/" },
+    { name: "NFT Marketplace", icon: <IoIosCart />, path: "/marketplace" },
+    { name: "Data Tables", icon: <IoMdStats />, path: "/datatables" },
+    { name: "Profile", icon: <IoMdPerson />, path: "/profile" },
+    { name: "Sign In", icon: <IoMdLock />, path: "/signin" },
+  ];
 
-      if (scrollPosition > navBeltHeight) {
-        document.getElementById("header").style.top = "-32px";
-        document.querySelector(".nav-bar__wrapper").style.position = "fixed";
-        document.querySelector(".nav-bar__wrapper").style.width = "100%";
-      } else {
-        document.getElementById("header").style.top = -scrollPosition + "px";
-        setIsScroll(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // 스크롤 이벤트 핸들러
-  const HandleScroll = () => {
-    const scrollY = window.scrollY;
-    const hd = document.querySelector("#header");
-    const nvBelt = document.querySelector(".nav-belt__wrapper");
-    const hdHeight = hd.offsetHeight;
-    const swiperHeight = document.querySelector(".topCont")?.offsetHeight || 0;
-    // ||(or 연산자): swiperHeight가 없으면 0을 넣어줌
-    if (window.innerWidth > 960) {
-      console.log("scrollY:", scrollY);
-      console.log("swiperHeight:", swiperHeight);
-      console.log("hdHeight:", hdHeight);
-      if (scrollY >= swiperHeight - hdHeight) {
-        gsap.to(hd, { background: "#fff", color: "#222", duration: 0.5 });
-        gsap.to(hd.querySelectorAll("button, a"), {
-          color: "#222",
-          duration: 0.5,
-        });
-        gsap.to(nvBelt, {
-          boxShadow: "0 1px 4px 0 rgba(0,0,0,.07);",
-        });
-      } else {
-        gsap.to(hd, { background: "rgba(0,0,0, 0.2)" });
-        gsap.to(hd.querySelectorAll("button, a"), {
-          color: "#fff",
-        });
-      }
-    }
-  };
-  window.addEventListener("scroll", HandleScroll);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <Box
       as="header"
       id="header"
       position={"fixed"}
-      top={0}
-      left={0}
-      right={0}
-      zIndex={1000}
-      minH={"92px"}
-      bg={isScroll ? "rgba(0,0,0,.1)" : "transparent"}
-      backdropFilter={isScroll ? "saturate(180%) blur(15px)" : "none"}
+      // w={"100%"}
+      minH={"100%"}
+      display={{ sm: "none", lg2: "block" }}
+      // zIndex={1000}
+      // bg={isScroll ? "rgba(0,0,0,.1)" : "transparent"}
+      // backdropFilter={isScroll ? "saturate(180%) blur(15px)" : "none"}
     >
-      {/* tab */}
       <Box
-        className="nav-belt__wrapper"
-        display={["none", null, null, null, "block"]}
-        h={"32px"}
-        bg={"rgba(0,0,0,.6)"}
+        className="nav-bar__wrapper"
+        width={"300px"}
+        height={"100vh"}
+        minH={"100%"}
+        overflowX={"hidden"}
+        position={"relative"}
+        m={0}
+        boxShadow={"14px 17px 40px 4px rgba(112, 144, 176, 0.08)"}
+        transition={"0.2s linear;"}
+        bg={"white"}
       >
-        <Container
-          display="flex"
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <ButtonGroup gap={"10px"}>
-            <Button colorScheme="teal" variant="link12">
-              공공 기관용
-            </Button>
-            <Button colorScheme="teal" variant="link12">
-              금융 클라우드
-            </Button>
-          </ButtonGroup>
-          <ButtonGroup gap={"10px"}>
-            <Button colorScheme="teal" variant="link12">
-              로그인
-            </Button>
-            <Button colorScheme="teal" variant="link12">
-              회원가입
-            </Button>
-            <Button colorScheme="teal" variant="link12">
-              Languages
-            </Button>
-          </ButtonGroup>
-        </Container>
-      </Box>
-      {/* header */}
-      <Box className="nav-bar__wrapper" bg={"rgba(0,0,0,.05)"}>
-        <Container
-          display={"flex"}
-          h={"60px"}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-        >
-          <Heading as={"h1"} fontSize={24} color={"white"}>
-            <Link to="/">Dashboard</Link>
-          </Heading>
-
-          <Gnb />
-          <ButtonGroup color={"white"}>
-            <IconButton
-              variant="ghost"
-              aria-label="Search database"
-              icon={<SearchIcon />}
-              color={"white"}
-            />
-            <IconButton
-              variant="ghost"
-              aria-label="Light database"
-              icon={<SunIcon />}
-              color={"white"}
-            />
-            <IconButton
-              variant="ghost"
-              aria-label="전체 메뉴"
-              icon={<HamburgerIcon />}
-              display={{ sm: "block", lg: "none" }}
-              color={"white"}
-            />
-          </ButtonGroup>
-        </Container>
+        <Box position={"relative"} overflow={"hidden"} w={"100%"} h={"100%"}>
+          <Box
+            position={"absolute"}
+            inset={"0px"}
+            overflow={"scroll"}
+            mr={"-16px"}
+            mb={"-22px"}
+          >
+            <Flex
+              flexDir={"column"}
+              h={"100%"}
+              pt={"25px"}
+              paddingInlineStart={"16px"}
+              paddingInlineEnd={"16px"}
+              borderRadius={"30px"}
+            >
+              {/* logo */}
+              <Flex flexDir={"column"} alignItems={"center"}>
+                <Heading
+                  as={"h1"}
+                  w={"175px"}
+                  h={"26px"}
+                  display={"inline-block"}
+                  lineHeight={"1em"}
+                  flexShrink={0}
+                  verticalAlign={"middle"}
+                  mt={"32px"}
+                  mb={"32px"}
+                  fontSize={24}
+                  color={"navy.700"}
+                  textAlign={"center"}
+                >
+                  <Link to="/">Dashboard</Link>
+                </Heading>
+                <Flex
+                  h={"1px"}
+                  w={"100%"}
+                  bg={"rgba(135, 140, 189, 0.3)"}
+                  mb={"20px"}
+                ></Flex>
+              </Flex>
+              {/* gnb */}
+              <Flex flexDir={"column"} mb={"auto"} mt={"8px"}>
+                <Box paddingInlineEnd={"16px"} paddingStart={"20px"}>
+                  {gnbList.map((item, index) => (
+                    <Link
+                      as={ReactRouterLink}
+                      key={index}
+                      to={item.path}
+                      bg={"transparent"}
+                      color={"secondaryGray.500"}
+                      textDecoration={"none"}
+                      className={index === activeIndex ? "active" : ""}
+                      onClick={() => {
+                        // event.preventDefault(); // 기본 동작 방지
+                        setActiveIndex(index);
+                      }}
+                    >
+                      <Box>
+                        <Flex
+                          alignItems={"center"}
+                          flexDir={"row"}
+                          pt={"5px"}
+                          pb={"5px"}
+                          paddingInlineStart={"10px"}
+                          _hover={{ background: "gray.200" }}
+                        >
+                          <Flex
+                            alignItems={"center"}
+                            justifyContent={"flex-start"}
+                            w={"100%"}
+                          >
+                            <Box
+                              className="icon"
+                              marginInlineEnd={"18px"}
+                              color={
+                                activeIndex === index
+                                  ? "brand.500"
+                                  : "secondary.500"
+                              }
+                              fontSize={"20px"}
+                              display={"inline-block"}
+                              height={"27px"}
+                              lineHeight={"1em"}
+                              flexShrink={0}
+                            >
+                              {item.icon}
+                            </Box>
+                            <Text
+                              color={
+                                activeIndex === index
+                                  ? "gray.700"
+                                  : "secondary.500"
+                              }
+                              fontWeight={
+                                activeIndex === index ? "bold" : "normal"
+                              }
+                            >
+                              {item.name}
+                            </Text>
+                          </Flex>
+                          <Box
+                            mt={0}
+                            marginInlineEnd={0}
+                            mb={0}
+                            marginInlineStart={"22px"}
+                            h={"36px"}
+                            w={"4px"}
+                            bg={
+                              activeIndex === index
+                                ? "brand.500"
+                                : "transparent"
+                            }
+                            borderRadius={"5px"}
+                          ></Box>
+                        </Flex>
+                      </Box>
+                    </Link>
+                  ))}
+                </Box>
+              </Flex>
+              {/* bottom content */}
+              <Box mt={"60px"} mb={"40px"} borderRadius={"30px"}>
+                <Flex
+                  flexDirection={"column"}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  bg={"linear-gradient(135deg, #868CFF 0%, #4318FF 100%)"}
+                  borderRadius={"30px"}
+                  position={"relative"}
+                >
+                  <Flex
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    w={"94px"}
+                    h={"94px"}
+                    border={"5px solid"}
+                    borderColor={"white"}
+                    bg={"linear-gradient(135deg, #868CFF 0%, #4318FF 100%)"}
+                    borderRadius={"50%"}
+                    position={"absolute"}
+                    left={"50%"}
+                    top={"-47px"}
+                    transform={"translate(-50%, 0%)"}
+                  >
+                    <Image src={circle} w={"40px"} h={"40px"} />
+                  </Flex>
+                  <Flex
+                    flexDir={"column"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    mb={"12px"}
+                    paddingInlineStart={"15px"}
+                    paddingInlineEnd={"15px"}
+                    pt={"55px"}
+                  >
+                    <Text
+                      fontSize={"18px"}
+                      color={"white"}
+                      fontWeight={"bold"}
+                      lineHeight={"150%"}
+                      textAlign={"center"}
+                      paddingInlineStart={"10px"}
+                      paddingInlineEnd={"10px"}
+                      mt={"10px"}
+                      mb={"6px"}
+                    >
+                      Upgrade to PRO
+                    </Text>
+                    <Text
+                      fontSize={"14px"}
+                      color={"white"}
+                      fontWeight={"normal"}
+                      textAlign={"center"}
+                      paddingInlineStart={"10px"}
+                      paddingInlineEnd={"10px"}
+                      mb={"6px"}
+                    >
+                      Improve your development process and start doing more with
+                      Horizon UI PRO!
+                    </Text>
+                  </Flex>
+                  <Link
+                    to="/"
+                    outline={"2px solid transparent"}
+                    outlineOffset={"2px"}
+                  >
+                    <Button
+                      mb={"24px"}
+                      fontSize={"0.875rem"}
+                      variant="ghost"
+                      color={"white"}
+                      bg={"whiteAlpha.300"}
+                      boxShadow={
+                        "45px 76px 113px 7px rgba(112, 144, 176, 0.08)"
+                      }
+                      marginInlineEnd={"auto"}
+                      marginInlineStart={"auto"}
+                      paddingInlineStart={"1rem"}
+                      paddingInlineEnd={"1rem"}
+                      minW={"185px"}
+                      h={"2.5rem"}
+                      transition={".25s all ease"}
+                      borderRadius={"16px"}
+                      display={"inline-flex"}
+                      alignItems={"center"}
+                      justifyContent={"center"}
+                    >
+                      Upgrade to PRO
+                    </Button>
+                  </Link>
+                </Flex>
+              </Box>
+            </Flex>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
 };
 
 export default Header;
+
+{
+  /* <Gnb />
+              <ButtonGroup color={"white"}>
+                <IconButton
+                  variant="ghost"
+                  aria-label="Search database"
+                  icon={<SearchIcon />}
+                  color={"white"}
+                />
+                <IconButton
+                  variant="ghost"
+                  aria-label="Light database"
+                  icon={<SunIcon />}
+                  color={"white"}
+                />
+                <IconButton
+                  variant="ghost"
+                  aria-label="전체 메뉴"
+                  icon={<HamburgerIcon />}
+                  display={{ sm: "block", lg: "none" }}
+                  color={"white"}
+                />
+              </ButtonGroup> */
+}

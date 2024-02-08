@@ -5,14 +5,23 @@ import { Box } from "@chakra-ui/react";
 
 const Layout = (props) => {
   return (
-    <Box display={"flex"} flexDir={"column"} minH={"100vh"}>
+    <Box>
       <Header />
-      <Box as="main" id="main" flexGrow={1}>
-        {/* {props.showTitle && <h2>{props.title}</h2>}
-                {props.children} */}
-        <Outlet />
+      <Box
+        as="main"
+        id="main"
+        float={"right"}
+        minH={"100vh"}
+        h={"100%"}
+        position={"relative"}
+        overflow={"auto"}
+        w={{ sm: "100%", lg2: "calc(100% - 290px)" }}
+        maxW={{ sm: "100%", lg2: "calc(100% - 290px)" }}
+      >
+        <Box p={{ sm: "20px", md: "30px" }}>
+          <Outlet />
+        </Box>
       </Box>
-      <Footer />
     </Box>
   );
 };
