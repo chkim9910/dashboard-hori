@@ -1,4 +1,4 @@
-import Tittle from "../../components/common/Tittle";
+import Tittle from "../../components/common/Title";
 import Layout from "../../components/layout/Layout";
 
 const Profile = () => {

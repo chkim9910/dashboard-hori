@@ -1,14 +1,29 @@
-import Title, { TitleH4 } from "../../components/common/Tittle";
+import Title, { TitleH4 } from "../../components/common/Title";
 import { Section } from "../../components/layout/Container";
 import Layout from "../../components/layout/Layout";
+import Info from "./components/Info";
 import MainSlide from "./components/MainSlide";
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 const Home = () => {
   return (
     <>
       {/* <Layout title="home" showTitle={false}> */}
       <Title>Main Dashboard</Title>
+
+      <Box
+        className="info"
+        display={"grid"}
+        gridGap={"20px"}
+        gridTemplateColumns={{
+          sm: "repeat(1, minmax(0, 1fr))",
+          md: "repeat(2, minmax(0, 1fr))",
+          lg: "repeat(3, minmax(0, 1fr))",
+        }}
+        mb={"20px"}
+      >
+        <Info />
+      </Box>
       <MainSlide />
       <Section isLightBackground={true}>
         <Container>

@@ -16,7 +16,7 @@ import {
   IoIosInformationCircleOutline,
   IoMdNotificationsOutline,
 } from "react-icons/io";
-const Tittle = (props) => {
+const Title = (props) => {
   return (
     <>
       <Flex
@@ -188,4 +188,4 @@ export const TitleH4 = (props) => {
   );
 };
 
-export default Tittle;
+export default Title;

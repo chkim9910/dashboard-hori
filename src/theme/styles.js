@@ -126,6 +126,7 @@ export const globalStyles = {
         fontSize: "16px",
         lineHeight: "1.5",
         color: mode("gray.900", "white")(props),
+        background: "secondaryGray.300",
       },
       input: {
         color: "gray.700",
