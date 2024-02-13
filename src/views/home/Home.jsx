@@ -1,4 +1,4 @@
-import Title, { TitleH4 } from "../../components/common/Title";
+import Title, { TitleH4 } from "../../components/common/Tittle";
 import { Section } from "../../components/layout/Container";
 import Layout from "../../components/layout/Layout";
 import MainSlide from "./components/MainSlide";
@@ -8,32 +8,59 @@ const Home = () => {
   return (
     <>
       {/* <Layout title="home" showTitle={false}> */}
+      <Title>Main Dashboard</Title>
       <MainSlide />
       <Section isLightBackground={true}>
         <Container>
-          <Title>회사 소개</Title>
-          <TitleH4>사장님 말씀</TitleH4>
+          <TitleH4>목표</TitleH4>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
           magnam assumenda, adipisci iste sint provident tempore mollitia.
           Deserunt labore ipsa quod odit dolore animi repudiandae vero dolorum
-          delectus similique?
-          <TitleH4>사모님 말씀</TitleH4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
-          magnam assumenda, adipisci iste sint
+          delectus similique? Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Ex, facere. Ex asperiores maiores atque, ipsam laboriosam neque
+          inventore molestias libero corrupti maxime? Iusto accusamus magni quis
+          dolorem voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
+          laboriosam neque inventore molestias libero corrupti maxime? Iusto
+          accusamus magni quis dolorem voluptatum saepe aut. <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
+          Ex asperiores maiores atque, ipsam laboriosam neque inventore
+          molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
+          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
+          laboriosam neque inventore molestias libero corrupti maxime? Iusto
+          accusamus magni quis dolorem voluptatum saepe aut. <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
+          Ex asperiores maiores atque, ipsam laboriosam neque inventore
+          molestias libero corrupti maxime?
         </Container>
       </Section>
       <Section>
         <Container>
-          <Title>회사 비전</Title>
+          <TitleH4>비전</TitleH4>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
           Ex asperiores maiores atque, ipsam laboriosam neque inventore
           molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-          voluptatum saepe aut.
+          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
+          laboriosam neque inventore molestias libero corrupti maxime? Iusto
+          accusamus magni quis dolorem voluptatum saepe aut. <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
+          Ex asperiores maiores atque, ipsam laboriosam neque inventore
+          molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
+          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
+          laboriosam neque inventore molestias libero corrupti maxime? Iusto
+          accusamus magni quis dolorem voluptatum saepe aut. <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
+          Ex asperiores maiores atque, ipsam laboriosam neque inventore
+          molestias libero corrupti maxime?
         </Container>
       </Section>
-      <Section isLightBackground={true}>
+      {/* <Section isLightBackground={true}>
         <Container>
-          <Title>회사 소개</Title>
           <TitleH4>사장님 말씀</TitleH4>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
           magnam assumenda, adipisci iste sint provident tempore mollitia.
@@ -43,8 +70,8 @@ const Home = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
           magnam assumenda, adipisci iste sint
         </Container>
-      </Section>
-      // {/* </Layout> */}
+      </Section> */}
+      {/* </Layout> */}
     </>
   );
 };

@@ -1,10 +1,11 @@
+import Tittle from "../../components/common/Tittle";
 import Layout from "../../components/layout/Layout";
 
 const DataTables = () => {
   return (
     <>
+      <Tittle>Data Tables</Tittle>
       {/* <Layout title="DataTables"> */}
-      <div>데이터테이블 컨텐츠</div>
       {/* </Layout> */}
     </>
   );

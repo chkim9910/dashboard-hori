@@ -10,6 +10,7 @@ import {
 import Layout from "../../components/layout/Layout";
 import { motion } from "framer-motion";
 import topImg from "../../assets/images/cnu3j07sra271.png";
+import Title from "../../components/common/Tittle";
 // 이미지도 변수 잡아서 데이터로 불러줘야 함
 
 const MarketPlace = () => {
@@ -22,6 +23,7 @@ const MarketPlace = () => {
 
   return (
     <>
+      <Title>NFT Marketplace</Title>
       {/* <Layout title="marketplace" showTitle={false}> */}
       <Box
         className="topCont"
