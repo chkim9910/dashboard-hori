@@ -16,15 +16,15 @@ const Layout = (props) => {
         h={"100%"}
         position={"relative"}
         overflow={"auto"}
-        w={{ sm: "100%", lg2: "calc(100% - 290px)" }}
-        maxW={{ sm: "100%", lg2: "calc(100% - 290px)" }}
+        w={{ base: "100%", lg2: "calc(100% - 290px)" }}
+        maxW={{ base: "100%", lg2: "calc(100% - 290px)" }}
       >
         <Box
           paddingInlineEnd={"20px"}
           minH={"100vh"}
-          p={{ sm: "20px", md: "30px" }}
+          p={{ base: "20px", md: "30px" }}
         >
-          <Box pt={{ sm: "180px", md: "80px" }}>
+          <Box pt={{ base: "180px", md: "80px" }}>
             <Outlet />
           </Box>
         </Box>

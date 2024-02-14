@@ -25,7 +25,7 @@ export const progressStyles = {
           field: {
             bg: "brand.500",
             borderRadius: "16px",
-            fontSize: "sm",
+            fontSize: "base",
           },
           track: {
             borderRadius: "20px",

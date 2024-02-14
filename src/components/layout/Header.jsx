@@ -36,8 +36,8 @@ const Header = () => {
       position={"fixed"}
       // w={"100%"}
       minH={"100%"}
-      display={{ sm: "none", lg2: "block" }}
-      // left={{ sm: "-500px", lg2: "0" }}
+      display={{ base: "none", lg2: "block" }}
+      // left={{ base: "-500px", lg2: "0" }}
       transition={"left 0.2s linear"}
       zIndex={10}
       // zIndex={1000}
@@ -222,7 +222,7 @@ export default Header;
                   variant="ghost"
                   aria-label="전체 메뉴"
                   icon={<HamburgerIcon />}
-                  display={{ sm: "block", lg: "none" }}
+                  display={{ base: "block", lg: "none" }}
                   color={"white"}
                 />
               </ButtonGroup> */

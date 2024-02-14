@@ -45,7 +45,7 @@ export default function Info() {
       icon: <IoIosDocument />,
     },
   ];
-  console.log(infoList[2].whichDir);
+  // console.log(infoList[2].whichDir);
   return (
     <>
       {infoList.map((item, index) => (
@@ -62,7 +62,7 @@ export default function Info() {
         >
           <Flex
             h={"100%"}
-            alignItems={{ sm: "center", lg2: "start" }}
+            alignItems={{ base: "center", lg2: "start" }}
             justifyContent={"center"}
             my={"auto"}
           >

@@ -29,7 +29,7 @@ export const buttonStyles = {
           borderRadius: "0",
           bg: ["red", "brand.200", "brand.900", "white"],
           // color: ['white', null, null, 'brand.500'],
-          color: { sm: "white", lg: "brand.500" },
+          color: { base: "white", lg: "brand.500" },
         }),
         brand: (props) => ({
           bg: mode("brand.500", "brand.400")(props),
@@ -42,6 +42,21 @@ export const buttonStyles = {
           },
           _hover: {
             bg: mode("brand.600", "brand.400")(props),
+          },
+        }),
+        solid: () => ({
+          bg: "secondaryGray.300",
+          color: "secondaryGray.600",
+          fontWeight: "normal",
+          borderRadius: "7px",
+          _focus: {
+            bg: "secondaryGray.400",
+          },
+          _active: {
+            bg: "secondaryGray.400",
+          },
+          _hover: {
+            bg: "secondaryGray.400",
           },
         }),
         darkBrand: (props) => ({

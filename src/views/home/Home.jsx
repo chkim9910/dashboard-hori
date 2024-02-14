@@ -3,90 +3,91 @@ import { Section } from "../../components/layout/Container";
 import Layout from "../../components/layout/Layout";
 import Info from "./components/Info";
 import MainSlide from "./components/MainSlide";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Flex, SimpleGrid } from "@chakra-ui/react";
+import Minicard from "./components/Minicard";
+import Totalspent from "./components/Totalspent";
+import WeeklyRevenue from "./components/WeeklyRevenue";
 
 const Home = () => {
   return (
     <>
       {/* <Layout title="home" showTitle={false}> */}
       <Title>Main Dashboard</Title>
-
-      <Box
-        className="info"
-        display={"grid"}
-        gridGap={"20px"}
-        gridTemplateColumns={{
-          sm: "repeat(1, minmax(0, 1fr))",
-          md: "repeat(2, minmax(0, 1fr))",
-          lg: "repeat(3, minmax(0, 1fr))",
-        }}
-        mb={"20px"}
-      >
-        <Info />
-      </Box>
-      <MainSlide />
-      <Section isLightBackground={true}>
-        <Container>
-          <TitleH4>목표</TitleH4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
-          magnam assumenda, adipisci iste sint provident tempore mollitia.
-          Deserunt labore ipsa quod odit dolore animi repudiandae vero dolorum
-          delectus similique? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Ex, facere. Ex asperiores maiores atque, ipsam laboriosam neque
-          inventore molestias libero corrupti maxime? Iusto accusamus magni quis
-          dolorem voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-          laboriosam neque inventore molestias libero corrupti maxime? Iusto
-          accusamus magni quis dolorem voluptatum saepe aut. <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
-          Ex asperiores maiores atque, ipsam laboriosam neque inventore
-          molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-          laboriosam neque inventore molestias libero corrupti maxime? Iusto
-          accusamus magni quis dolorem voluptatum saepe aut. <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
-          Ex asperiores maiores atque, ipsam laboriosam neque inventore
-          molestias libero corrupti maxime?
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <TitleH4>비전</TitleH4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
-          Ex asperiores maiores atque, ipsam laboriosam neque inventore
-          molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-          laboriosam neque inventore molestias libero corrupti maxime? Iusto
-          accusamus magni quis dolorem voluptatum saepe aut. <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
-          Ex asperiores maiores atque, ipsam laboriosam neque inventore
-          molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-          voluptatum saepe aut.Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-          laboriosam neque inventore molestias libero corrupti maxime? Iusto
-          accusamus magni quis dolorem voluptatum saepe aut. <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere.
-          Ex asperiores maiores atque, ipsam laboriosam neque inventore
-          molestias libero corrupti maxime?
-        </Container>
-      </Section>
-      {/* <Section isLightBackground={true}>
-        <Container>
-          <TitleH4>사장님 말씀</TitleH4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
-          magnam assumenda, adipisci iste sint provident tempore mollitia.
-          Deserunt labore ipsa quod odit dolore animi repudiandae vero dolorum
-          delectus similique?
-          <TitleH4>사모님 말씀</TitleH4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui
-          magnam assumenda, adipisci iste sint
-        </Container>
-      </Section> */}
-      {/* </Layout> */}
+      <Minicard />
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb={"20px"}>
+        <Totalspent />
+        <WeeklyRevenue />
+      </SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb={"20px"}>
+        <Flex
+          p={"20px"}
+          flexDirection={"column"}
+          w={"100%"}
+          position={"relative"}
+          borderRadius={"20px"}
+          minW={0}
+          bg="white"
+          justifyContent={"center"}
+          mb={0}
+          height="345px"
+          px={0}
+        ></Flex>
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px">
+          <Flex
+            p={"20px"}
+            flexDirection={"column"}
+            w={"100%"}
+            position={"relative"}
+            borderRadius={"20px"}
+            minW={0}
+            bg="white"
+          ></Flex>
+          <Flex
+            p={"20px"}
+            flexDirection={"column"}
+            w={"100%"}
+            position={"relative"}
+            borderRadius={"20px"}
+            minW={0}
+            bg="white"
+          ></Flex>
+        </SimpleGrid>
+      </SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb={"20px"}>
+        <Flex
+          p={"20px"}
+          flexDirection={"column"}
+          w={"100%"}
+          position={"relative"}
+          borderRadius={"20px"}
+          minW={0}
+          bg="white"
+          justifyContent={"center"}
+          mb={0}
+          height="345px"
+          px={0}
+        ></Flex>
+        <SimpleGrid columns={2} spacing={10}>
+          <Flex
+            p={"20px"}
+            flexDirection={"column"}
+            w={"100%"}
+            position={"relative"}
+            borderRadius={"20px"}
+            minW={0}
+            bg="white"
+          ></Flex>
+          <Flex
+            p={"20px"}
+            flexDirection={"column"}
+            w={"100%"}
+            position={"relative"}
+            borderRadius={"20px"}
+            minW={0}
+            bg="white"
+          ></Flex>
+        </SimpleGrid>
+      </SimpleGrid>
     </>
   );
 };

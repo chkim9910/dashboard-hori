@@ -17,7 +17,7 @@ export const textareaStyles = {
             color: mode("secondaryGray.900", "white")(props),
             borderColor: mode("secondaryGray.100", "whiteAlpha.100")(props),
             borderRadius: "16px",
-            fontSize: "sm",
+            fontSize: "base",
             p: "20px",
             _placeholder: { color: "secondaryGray.400" },
           },

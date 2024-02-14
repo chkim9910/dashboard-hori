@@ -21,8 +21,8 @@ const Title = (props) => {
     <>
       <Flex
         position={"fixed"}
-        top={{ sm: "12px", md: "16px", lg2: "20px" }}
-        right={{ sm: "12px", md: "30px" }}
+        top={{ base: "12px", md: "16px", lg2: "20px" }}
+        right={{ base: "12px", md: "30px" }}
         zIndex={10}
         bg={"rgba(244, 247, 254, 0.2)"}
         backdropFilter={"blur(20px)"}
@@ -33,10 +33,10 @@ const Title = (props) => {
         justifyContent={"center"}
         alignItems={"center"}
         lineHeight={"25.6px"}
-        paddingInlineStart={{ sm: "15px", md: "10px", lg2: "12px" }}
-        paddingInlineEnd={{ sm: "15px", md: "10px" }}
+        paddingInlineStart={{ base: "15px", md: "10px", lg2: "12px" }}
+        paddingInlineEnd={{ base: "15px", md: "10px" }}
         w={{
-          sm: "calc(100vw - 6%)",
+          base: "calc(100vw - 6%)",
           md: "calc(100vw - 8%)",
           lg: "calc(100vw - 6%)",
           lg2: "calc(100vw - 350px)",
@@ -46,9 +46,9 @@ const Title = (props) => {
           w={"100%"}
           mb={0}
           alignItems={"center"}
-          flexDirection={{ sm: "column", md: "row" }}
+          flexDirection={{ base: "column", md: "row" }}
         >
-          <Box mb={{ sm: "8px", md: "0px" }}>
+          <Box mb={{ base: "8px", md: "0px" }}>
             <Breadcrumb as="nav" color={"gray.700"} fontSize={"0.875rem"}>
               <BreadcrumbItem mb={"5px"}>
                 <BreadcrumbLink href="#">Pages</BreadcrumbLink>
@@ -67,7 +67,7 @@ const Title = (props) => {
               {props.children}
             </Link>
           </Box>
-          <Box w={{ sm: "100%", md: "unset" }} marginInlineStart={"auto"}>
+          <Box w={{ base: "100%", md: "unset" }} marginInlineStart={"auto"}>
             <Flex
               flexDirection={"row"}
               alignItems={"center"}
@@ -79,7 +79,7 @@ const Title = (props) => {
               <Flex
                 position={"relative"}
                 marginInlineEnd={"10px"}
-                w={{ sm: "100%", md: "200px" }}
+                w={{ base: "100%", md: "200px" }}
               >
                 <Box w={"100%"}>
                   <IconButton
