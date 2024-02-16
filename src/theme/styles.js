@@ -131,6 +131,13 @@ export const globalStyles = {
       input: {
         color: "gray.700",
       },
+      ".css-1ydjfm6": {
+        borderColor: "secondaryGray.200 !important",
+      },
+      ".css-1ydjfm6[data-checked]": {
+        background: "brand.500 !important",
+        borderColor: "brand.500 !important",
+      },
       html: {
         fontFamily: '"Noto Sans KR", "sans-serif"',
       },

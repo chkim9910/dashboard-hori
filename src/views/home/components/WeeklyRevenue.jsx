@@ -1,7 +1,7 @@
 import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
 import Card from "../../../components/card/Card";
 import { IoMdStats } from "react-icons/io";
-import ColumnChart from "../../../components/chart/BarChart";
+import ColumnChart from "../../../components/chart/ColumnChart";
 
 export default function WeeklyRevenue() {
   return (

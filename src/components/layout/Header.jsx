@@ -152,7 +152,7 @@ const Header = () => {
                     <Text
                       fontSize={"14px"}
                       color={"white"}
-                      fontWeight={"normal"}
+                      fontWeight={"medium"}
                       textAlign={"center"}
                       paddingInlineStart={"10px"}
                       paddingInlineEnd={"10px"}

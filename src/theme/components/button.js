@@ -47,7 +47,7 @@ export const buttonStyles = {
         solid: () => ({
           bg: "secondaryGray.300",
           color: "secondaryGray.600",
-          fontWeight: "normal",
+          fontWeight: "medium",
           borderRadius: "7px",
           _focus: {
             bg: "secondaryGray.400",

@@ -102,7 +102,7 @@ const Title = (props) => {
                     minW={0}
                     borderRadius={"30px"}
                     outlineOffset={"2px"}
-                    fontWeight={"normal"}
+                    fontWeight={"medium"}
                     fontSize={"0.875rem"}
                     paddingInlineStart={"2.5rem"}
                     paddingInlineEnd={"1rem"}

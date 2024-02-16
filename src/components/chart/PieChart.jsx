@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-class BarChart extends Component {
+class PieChart extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       chartData: [],
       chartOptions: {},
@@ -19,15 +20,17 @@ class BarChart extends Component {
 
   render() {
     return (
-      <Chart
-        options={this.state.chartOptions}
-        series={this.state.chartData}
-        type="bar"
-        width="100%"
-        height="100%"
-      />
+      <div className="pie">
+        <Chart
+          options={this.state.chartOptions}
+          series={this.state.chartData}
+          type="pie"
+          width="100%"
+          //   height="55%"
+        />
+      </div>
     );
   }
 }
 
-export default BarChart;
+export default PieChart;

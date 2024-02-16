@@ -62,7 +62,7 @@ export default function Totalspent() {
               <Text
                 color={"secondaryGray.600"}
                 fontSize={"0.875rem"}
-                fontWeight={"normal"}
+                fontWeight={"medium"}
                 mt={"4px"}
                 marginInlineEnd={"12px"}
               >

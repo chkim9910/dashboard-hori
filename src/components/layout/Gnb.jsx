@@ -67,7 +67,7 @@ const Gnb = () => {
                   color={
                     activeIndex === index ? "gray.700" : "secondaryGray.500"
                   }
-                  fontWeight={activeIndex === index ? "bold" : "normal"}
+                  fontWeight={activeIndex === index ? "bold" : "medium"}
                 >
                   {item.name}
                 </Text>
