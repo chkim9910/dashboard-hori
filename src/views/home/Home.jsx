@@ -14,6 +14,7 @@ import DailyTraffic from "./components/DailyTraffic";
 import PieCard from "./components/PieCard";
 import ComplexTable from "./components/ComplexTable";
 import Task from "./components/Task";
+import MiniCalendar from "../../components/calendar/MiniCalendar";
 
 const Home = () => {
   return (
@@ -36,15 +37,7 @@ const Home = () => {
         <ComplexTable />
         <SimpleGrid columns={2} spacing={10}>
           <Task />
-          <Flex
-            p={"20px"}
-            flexDirection={"column"}
-            w={"100%"}
-            position={"relative"}
-            borderRadius={"20px"}
-            minW={0}
-            bg="white"
-          ></Flex>
+          <MiniCalendar />
         </SimpleGrid>
       </SimpleGrid>
     </>
