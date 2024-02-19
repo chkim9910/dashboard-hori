@@ -9,7 +9,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper/modules";
 import { Box, Button, Flex, Img, Link, Text } from "@chakra-ui/react";
-import topImg from "../../../assets/images/NftBanner1.87062366f75bedd52bd2.png";
+import fstImg from "../../../assets/images/NftBanner1.87062366f75bedd52bd2.png";
+import sndImg from "../../../assets/images/NftBanner2.png";
+import trdImg from "../../../assets/images/NftBanner3.png";
 
 export default function BannerSlide() {
   return (
@@ -19,7 +21,7 @@ export default function BannerSlide() {
           <Box
             position={"absolute"}
             zIndex={-1}
-            bgImage={topImg}
+            bgImage={fstImg}
             w={"100%"}
             h={"100%"}
             bgSize={"cover"}
@@ -80,8 +82,32 @@ export default function BannerSlide() {
             </Flex>
           </Box>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>
+          <Box
+            position={"absolute"}
+            zIndex={-1}
+            bgImage={sndImg}
+            w={"100%"}
+            h={"100%"}
+            bgSize={"100%"}
+            bgPosition={"0% 30%"}
+            borderRadius={"30px"}
+          />
+          Slide 2
+        </SwiperSlide>
+        <SwiperSlide>
+          <Box
+            position={"absolute"}
+            zIndex={-1}
+            bgImage={trdImg}
+            w={"100%"}
+            h={"100%"}
+            bgSize={"100%"}
+            // bgPosition={"0% 30%"}
+            borderRadius={"30px"}
+          />
+          Slide 3
+        </SwiperSlide>
       </Swiper>
     </>
   );
