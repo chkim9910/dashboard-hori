@@ -57,7 +57,6 @@ const MarketPlace = () => {
       history: "2m",
     },
   ];
-
   const NFTAddList = [
     {
       name: "Swipe Circles",
@@ -89,6 +88,7 @@ const MarketPlace = () => {
         templateColumns={{ base: 0, lg2: "repeat(3, 1fr)" }}
         display={{ base: "block", xl: "grid" }}
         mb={"20px"}
+        gridGap={"20px"}
       >
         <Stack
           display={"flex"}
@@ -138,6 +138,7 @@ const MarketPlace = () => {
               base: "repeat(1, minmax(0, 1fr))",
               md: "repeat(3, minmax(0, 1fr))",
             }}
+            gridGap={"20px"}
           >
             {NFTList.map((item, index) => (
               <NFT
@@ -173,6 +174,7 @@ const MarketPlace = () => {
               base: "repeat(1, minmax(0, 1fr))",
               md: "repeat(3, minmax(0, 1fr))",
             }}
+            gridGap={"20px"}
           >
             {NFTAddList.map((item, index) => (
               <NFT
