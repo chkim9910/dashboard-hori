@@ -12,6 +12,7 @@ import { Box, Button, Flex, Img, Link, Text } from "@chakra-ui/react";
 import fstImg from "../../../assets/images/NftBanner1.87062366f75bedd52bd2.png";
 import sndImg from "../../../assets/images/NftBanner2.png";
 import trdImg from "../../../assets/images/NftBanner3.png";
+import styled from "styled-components";
 
 export default function BannerSlide() {
   return (
@@ -93,7 +94,7 @@ export default function BannerSlide() {
             bgPosition={"0% 30%"}
             borderRadius={"30px"}
           />
-          Slide 2
+          Slide 2<ButtonStyle $primary>see all</ButtonStyle>
         </SwiperSlide>
         <SwiperSlide>
           <Box
@@ -106,9 +107,27 @@ export default function BannerSlide() {
             // bgPosition={"0% 30%"}
             borderRadius={"30px"}
           />
-          Slide 3
+          Slide 3<ButtonStyle>see all</ButtonStyle>
         </SwiperSlide>
       </Swiper>
     </>
   );
 }
+
+const ButtonStyle = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${(props) => (props.$primary ? "brand.500" : "white")};
+  color: ${(props) => (props.$primary ? "white" : "brand.500")};
+  display: inline-flex;
+  align-items: center;
+  border-radius: 16px;
+  font-weight: 500;
+  box-shadow: 45px 76px 113px 7px rgba(112, 144, 176, 0.08);
+  height: 40px;
+  min-width: 2.5rem;
+  padding: 20px 27px;
+  margin-right: 38px;
+  margin-top: 50px;
+  font-size: 14px;
+  line-height: 14px;
+`;

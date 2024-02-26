@@ -5,14 +5,14 @@ export const progressStyles = {
       baseStyle: {
         field: {
           fontWeight: 400,
-          w: "16px",
-          h: "16px",
+          w: "20px",
+          h: "8px",
           borderRadius: "20px",
           _checked: { transform: "translate(20px, 0px)" },
         },
         track: {
-          w: "40px",
-          h: "20px",
+          w: "80px",
+          h: "8px !important",
           borderRadius: "20px",
           _focus: {
             boxShadow: "none",
