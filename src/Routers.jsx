@@ -33,7 +33,7 @@ import LayoutNone from "./components/layout/LayoutNone";
 
 const Routers = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* <Route path="/" element={<Layout />}> */}
         {/* 각각의 페이지에 layout을 감싸주지 않고, ROUTERS에서 감싸주기 */}
