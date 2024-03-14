@@ -18,9 +18,10 @@ import MiniCalendar from "../../components/calendar/MiniCalendar";
 import { useEffect, useState } from "react";
 const Home = () => {
   // useEffect(()=>{},[의존성 배열])
+  const [color, setColor] = useState("palegoldenrod");
   // 1. 컴포넌트 마운트될 때 배경색 노랑으로 변경
   useEffect(() => {
-    document.body.style.backgroundColor = "palegoldenrod";
+    document.body.style.backgroundColor = color;
     document.body.id = "intro";
     document.body.classList.add("intro");
 
@@ -30,11 +31,10 @@ const Home = () => {
       document.body.id = "";
       document.body.classList.remove("intro");
     };
-  }, []);
+  }, [color]);
 
   // 3. 업데이트 : 버튼 클릭 시 배경색 변경
   // 업데이트 시 useEffect는 의존성 배열 필요
-  const [color, setColor] = useState("palegoldenrod");
   const toggleColor = () => {
     setColor((prevColor) =>
       prevColor === "palegoldenrod" ? "ligtblue" : "palegoldenrod"
