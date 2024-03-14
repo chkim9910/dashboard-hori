@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import { Box } from "@chakra-ui/react";
+import { Box, background } from "@chakra-ui/react";
 
 const Layout = (props) => {
   return (
